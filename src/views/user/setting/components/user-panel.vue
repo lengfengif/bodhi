@@ -104,6 +104,7 @@
         fileItem,
         name = 'file',
       } = options;
+      
       onProgress(20);
       const formData = new FormData();
       formData.append(name as string, fileItem.file as Blob);

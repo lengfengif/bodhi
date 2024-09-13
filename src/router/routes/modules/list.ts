@@ -21,6 +21,38 @@ const LIST: AppRouteRecordRaw = {
         requiresAuth: true,
         roles: ['*'],
       },
+      children: [
+        {
+          path: 'personalData', // The midline path complies with SEO specifications
+          name: 'personalData',
+          component: () => import('@/views/list/search-table/components/personalData.vue'),
+          meta: {
+            locale: 'menu.list.searchTable',
+            requiresAuth: true,
+            roles: ['*'],
+          },
+        },
+        {
+          path: 'myAchievement', // The midline path complies with SEO specifications
+          name: 'myAchievement',
+          component: () => import('@/views/list/search-table/components/myAchievement.vue'),
+          meta: {
+            locale: 'menu.list.searchTable',
+            requiresAuth: true,
+            roles: ['*'],
+          },
+        },
+        {
+          path: 'myExam', // The midline path complies with SEO specifications
+          name: 'myExam',
+          component: () => import('@/views/list/search-table/components/myExam.vue'),
+          meta: {
+            locale: 'menu.list.searchTable',
+            requiresAuth: true,
+            roles: ['*'],
+          },
+        },
+      ],
     },
     {
       path: 'card',
