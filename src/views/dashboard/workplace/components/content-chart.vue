@@ -1,6 +1,6 @@
 <template>
   <a-spin :loading="loading" style="width: 100%">
-    <a-card
+    <!-- <a-card
       class="general-card"
       :header-style="{ paddingBottom: 0 }"
       :body-style="{
@@ -12,7 +12,7 @@
         <a-link>{{ $t('workplace.viewMore') }}</a-link>
       </template>
       <Chart height="289px" :option="chartOption" />
-    </a-card>
+    </a-card> -->
   </a-spin>
 </template>
 

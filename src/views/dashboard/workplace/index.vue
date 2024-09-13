@@ -1,148 +1,509 @@
 <template>
   <div class="container">
-    <div class="left-side">
-      <div class="panel">
-        <Banner />
-        <DataPanel />
-        <ContentChart />
-      </div>
-      <a-grid :cols="24" :col-gap="16" :row-gap="16" style="margin-top: 16px">
-        <a-grid-item
-          :span="{ xs: 24, sm: 24, md: 24, lg: 12, xl: 12, xxl: 12 }"
-        >
-          <PopularContent />
-        </a-grid-item>
-        <a-grid-item
-          :span="{ xs: 24, sm: 24, md: 24, lg: 12, xl: 12, xxl: 12 }"
-        >
-          <CategoriesPercent />
-        </a-grid-item>
-      </a-grid>
+    <div class="container-carousel">
+      <a-carousel
+        :style="{
+          width: '100%',
+          height: '73vh',
+        }"
+        :auto-play="true"
+        indicator-type="dot"
+        show-arrow="hover"
+      >
+        <a-carousel-item v-for="(image, index) in [img1, img2]" :key="index">
+          <img
+            :src="image"
+            :style="{
+              objectFit: 'cover', // 保持图片的宽高比
+              width: '100%', // 充满整个轮播容器。
+              height: '100%',
+            }"
+          />
+        </a-carousel-item>
+      </a-carousel>
     </div>
-    <div class="right-side">
-      <a-grid :cols="24" :row-gap="16">
-        <a-grid-item :span="24">
-          <div class="panel moduler-wrap">
-            <QuickOperation />
-            <RecentlyVisited />
-          </div>
-        </a-grid-item>
-        <a-grid-item class="panel" :span="24">
-          <Carousel />
-        </a-grid-item>
-        <a-grid-item class="panel" :span="24">
-          <Announcement />
-        </a-grid-item>
-        <a-grid-item class="panel" :span="24">
-          <Docs />
-        </a-grid-item>
-      </a-grid>
+
+    <div class="container-learn">
+      <div class="container-learn-title">
+        <h1>基础学习</h1>
+      </div>
+
+      <div class="container-learn-link">
+        <a-link>more</a-link>
+      </div>
+
+      <div class="container-learn-context">
+        <a-card hoverable class="container-learn-context-card">
+          <!--  卡片1  -->
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-learn-context-card">
+          <!--  卡片  -->
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-learn-context-card">
+          <!--  卡片  -->
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-learn-context-card">
+          <!--  卡片  -->
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+      </div>
+    </div>
+
+    <div class="container-Advanced">
+      <!--  卡片2  -->
+      <div class="container-Advanced-title">
+        <h1>进阶学习</h1>
+      </div>
+
+      <div class="container-Advanced-link">
+        <a-link>more</a-link>
+      </div>
+
+      <div class="container-Advanced-context">
+        <a-card hoverable class="container-Advanced-context-card">
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-Advanced-context-card">
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-Advanced-context-card">
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-Advanced-context-card">
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+      </div>
+    </div>
+
+    <div class="container-products">
+      <div class="container-products-title">
+        <h1>部门精品</h1>
+      </div>
+
+      <div class="container-products-link">
+        <a-link>more</a-link>
+      </div>
+
+      <div class="container-products-context">
+        <a-card hoverable class="container-products-context-card">
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-products-context-card">
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="算法与设计">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-products-context-card">
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="物资综合管理系统">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+
+        <a-card hoverable class="container-products-context-card">
+          <template #cover>
+            <div
+              :style="{
+                height: '144px',
+                overflow: 'hidden',
+              }"
+            >
+              <img
+                :style="{ width: '100%', transform: 'translateY(-1px)' }"
+                alt="dessert"
+                src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
+              />
+            </div>
+          </template>
+          <a-card-meta title="操作规范与流程">
+            <template #description>
+              <div style="margin-top: 23px;">计算机大家都会用，但是如何利用计算机实现实际问题呢？</div>
+              <div style="margin-top: 19px;">400人参加</div>
+            </template>
+          </a-card-meta>
+        </a-card>
+      </div>
+    </div>
+
+    <div class="container-image">
+      <div class="container-image-title">
+        <h1>企业形象</h1>
+      </div>
+      <div class="container-image-images"></div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import Banner from './components/banner.vue';
-  import DataPanel from './components/data-panel.vue';
-  import ContentChart from './components/content-chart.vue';
-  import PopularContent from './components/popular-content.vue';
-  import CategoriesPercent from './components/categories-percent.vue';
-  import RecentlyVisited from './components/recently-visited.vue';
-  import QuickOperation from './components/quick-operation.vue';
-  import Announcement from './components/announcement.vue';
-  import Carousel from './components/carousel.vue';
-  import Docs from './components/docs.vue';
-</script>
-
-<script lang="ts">
-  export default {
-    name: 'Dashboard', // If you want the include property of keep-alive to take effect, you must name the component
-  };
+  import img1 from '@/assets/images/banner1.jpg';
+  import img2 from '@/assets/images/banner2.jpg';
 </script>
 
 <style lang="less" scoped>
   .container {
-    background-color: var(--color-fill-2);
-    padding: 16px 20px;
-    padding-bottom: 0;
     display: flex;
-  }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
-  .left-side {
-    flex: 1;
-    overflow: auto;
-  }
-
-  .right-side {
-    width: 280px;
-    margin-left: 16px;
-  }
-
-  .panel {
-    background-color: var(--color-bg-2);
-    border-radius: 4px;
-    overflow: auto;
-  }
-  :deep(.panel-border) {
-    margin-bottom: 0;
-    border-bottom: 1px solid rgb(var(--gray-2));
-  }
-  .moduler-wrap {
-    border-radius: 4px;
-    background-color: var(--color-bg-2);
-    :deep(.text) {
-      font-size: 12px;
-      text-align: center;
-      color: rgb(var(--gray-8));
-    }
-
-    :deep(.wrapper) {
-      margin-bottom: 8px;
-      text-align: center;
-      cursor: pointer;
-
-      &:last-child {
-        .text {
-          margin-bottom: 0;
-        }
-      }
-      &:hover {
-        .icon {
-          color: rgb(var(--arcoblue-6));
-          background-color: #e8f3ff;
-        }
-        .text {
-          color: rgb(var(--arcoblue-6));
-        }
-      }
-    }
-
-    :deep(.icon) {
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      margin-bottom: 4px;
-      color: rgb(var(--dark-gray-1));
-      line-height: 32px;
-      font-size: 16px;
-      text-align: center;
-      background-color: rgb(var(--gray-1));
-      border-radius: 4px;
-    }
-  }
-</style>
-
-<style lang="less" scoped>
-  // responsive
-  .mobile {
-    .container {
-      display: block;
-    }
-    .right-side {
-      // display: none;
+    &-carousel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
-      margin-left: 0;
-      margin-top: 16px;
+      height: 63vh;
+      flex-direction: column;
+    }
+
+    &-learn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      background: #ffffff;
+
+      &-title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 40px;
+        margin-left: 70px;
+      }
+
+      &-link {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-direction: column;
+        align-items: center;
+        align-self: flex-end;
+        margin-right: 56px;
+      }
+
+      &-context {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1px 60px 60px 60px;
+
+        &-card {
+          width: calc(100% / 4 - 20px);
+        }
+      }
+    }
+
+    &-Advanced {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      background: #eceff1;
+
+      &-title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 40px;
+        margin-left: 70px;
+      }
+
+      &-link {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-direction: column;
+        align-items: center;
+        align-self: flex-end;
+        margin-right: 33px;
+      }
+
+      &-context {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 38px 38px 38px;
+
+        &-card {
+          width: calc(100% / 4 - 20px);
+        }
+      }
+    }
+
+    &-products {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      background: #ffffff;
+
+      &-title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 40px;
+        margin-left: 70px;
+      }
+
+      &-link {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-direction: column;
+        align-items: center;
+        align-self: flex-end;
+        margin-right: 33px;
+      }
+
+      &-context {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 38px 38px 38px;
+
+        &-card {
+          width: calc(100% / 4 - 20px);
+        }
+      }
+    }
+
+    &-image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      background: #ffffff;
+
+      &-title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 40px;
+        margin-left: 70px;
+      }
+
+      &-images {
+        background-image: url('/src/assets/images/ animal.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 80vw;
+        height: 696px;
+      }
     }
   }
 </style>

@@ -3,14 +3,15 @@
     <div class="left-side">
       <a-space>
         <img
-          alt="logo"
-          src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
-        />
+        alt="logo"
+        src="@/assets/images/tree.jpg"
+        style="height: 40px; width: auto;" 
+      />
         <a-typography-title
           :style="{ margin: 0, fontSize: '18px' }"
           :heading="5"
         >
-          Arco Pro
+          Bodhi Education
         </a-typography-title>
         <icon-menu-fold
           v-if="!topMenu && appStore.device === 'mobile'"
@@ -22,7 +23,12 @@
     <div class="center-side">
       <Menu v-if="topMenu" />
     </div>
-    <ul class="right-side">
+    <div class="button">
+      <a-space>
+        <a-button type="primary" shape="round" style="margin-top: 13px; margin-right: 24px; width: 140px">加入</a-button>
+      </a-space>
+    </div>
+    <!-- <ul class="right-side">
       <li>
         <a-tooltip :content="$t('settings.search')">
           <a-button class="nav-btn" type="outline" :shape="'circle'">
@@ -188,7 +194,7 @@
           </template>
         </a-dropdown>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 

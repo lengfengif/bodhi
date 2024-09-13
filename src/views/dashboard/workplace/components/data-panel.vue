@@ -4,7 +4,7 @@
       class="panel-col"
       :span="{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12, xxl: 6 }"
     >
-      <a-space>
+      <!-- <a-space>
         <a-avatar :size="54" class="col-avatar">
           <img
             alt="avatar"
@@ -94,7 +94,7 @@
         >
           <template #suffix> % <icon-caret-up class="up-icon" /> </template>
         </a-statistic>
-      </a-space>
+      </a-space> -->
     </a-grid-item>
     <a-grid-item :span="24">
       <a-divider class="panel-border" />
